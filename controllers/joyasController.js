@@ -1,6 +1,6 @@
 const pool = require("../db/connection");
 
-// GET /joyas — estructura HATEOAS con límite, página y ordenamiento
+// GET HATEOAS
 const getJoyas = async (req, res) => {
   try {
     const { limits = 10, page = 1, order_by = "id_ASC" } = req.query;
@@ -46,7 +46,7 @@ const getJoyas = async (req, res) => {
   }
 };
 
-// GET /joyas/filtros — con consultas parametrizadas
+// GET /joyas/filtros
 const filtrarJoyas = async (req, res) => {
   try {
     const { precio_min, precio_max, categoria, metal } = req.query;
